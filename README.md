@@ -1,5 +1,7 @@
 trello-cards-from-csv
 =====================
+csv2trello is a tool to create cards in a trello board with csv.
+
 
 #get app key
 `https://trello.com/1/appKey/generate`
@@ -13,5 +15,9 @@ trello-cards-from-csv
 #usage
 
 ```console
-go run main.go -key=<key> -token=<token> -l=<listId> -c <csvfile.csv>
+go get github.com/sk88ks/csv2trello
+csv2trello -key=<key> -token=<token> -l=<listId> -c <csvfile.csv>
 ```
+
+#TODO
+Modify to be able to "desc" and "checklist"
