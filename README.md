@@ -9,3 +9,9 @@ trello-cards-from-csv
 
 #get list id
 `https://api.trello.com/1/boards/<BoardId>?lists=all&key=<AppKey>&token=<token>`
+
+#usage
+
+```console
+go run main.go -key=<key> -token=<token> -l=<listId> -c <csvfile.csv>
+```
