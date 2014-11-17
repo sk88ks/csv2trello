@@ -16,7 +16,7 @@ import (
 var (
 	key      string
 	token    string
-	listId   string
+	listID   string
 	filepath string
 )
 
@@ -28,8 +28,8 @@ func failOnError(err error) {
 
 func registerFlag() {
 	flag.StringVar(&key, "key", "", "application key")
-	flag.StringVar(&key, "token", "", "application key")
-	flag.StringVar(&listId, "l", "", "list id")
+	flag.StringVar(&token, "token", "", "application token")
+	flag.StringVar(&listID, "l", "", "list id")
 	flag.StringVar(&filepath, "csv", "", "csv filepath")
 	flag.Parse()
 }
@@ -70,8 +70,9 @@ func main() {
 			"desc":  {desc},
 		}
 
-		url := "https://api.trello.com/1/lists/" + listId + "/cards"
+		url := "https://api.trello.com/1/lists/" + listID + "/cards"
 
+		fmt.Println(strings.NewReader(data.Encode()))
 		resp, _ := client.Post(
 			url,
 			"application/x-www-form-urlencoded",
